@@ -1,0 +1,22 @@
+<mat-toolbar class="navbar" [class.menu-open]="isMenuOpen">
+  <span class="logo" (click)="scrollTo('home')">Arshad Khan</span>
+  <span class="spacer"></span>
+  
+  <div class="nav-links" [class.mobile-active]="isMenuOpen">
+    <button mat-button appMagneticButton [strength]="0.2" (click)="scrollTo('about')">About</button>
+    <button mat-button appMagneticButton [strength]="0.2" (click)="scrollTo('experience')">Experience</button>
+    <button mat-button appMagneticButton [strength]="0.2" (click)="scrollTo('projects')">Projects</button>
+    <button mat-button appMagneticButton [strength]="0.2" (click)="scrollTo('skills')">Skills</button>
+    <button mat-button appMagneticButton [strength]="0.2" (click)="scrollTo('contact')">Contact</button>
+  </div>
+
+  <div class="nav-actions">
+    <button mat-icon-button class="theme-toggle" (click)="themeService.toggleTheme()" [title]="themeService.isDarkMode() ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+      <mat-icon>{{ themeService.isDarkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+
+    <button mat-icon-button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

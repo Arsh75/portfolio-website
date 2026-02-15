@@ -1,0 +1,26 @@
+<section id="experience" (mousemove)="onMouseMove($event)" style="position: relative;">
+  <canvas #particleCanvas class="particle-canvas"></canvas>
+  <div class="experience-header" data-aos="fade-up">
+    <h2 class="section-title">My Journey</h2>
+    <p class="section-subtitle">A timeline of my professional growth and technical contributions.</p>
+  </div>
+  
+  <div class="experience-container" data-aos="fade-up">
+    <mat-tab-group dynamicHeight>
+      @for (exp of experiences; track exp.period) {
+        <mat-tab [label]="exp.company">
+          <div class="tab-content">
+            <h3 class="role">{{ exp.role }} <span class="company-name">{{ exp.company }}</span></h3>
+            <div class="period">{{ exp.period }}</div>
+            
+            <ul class="points-list">
+              @for (point of exp.points; track point) {
+                <li>{{ point }}</li>
+              }
+            </ul>
+          </div>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  </div>
+</section>

@@ -1,0 +1,114 @@
+.experience-header {
+  text-align: center;
+  margin-bottom: clamp(30px, 8vw, 60px);
+
+  .section-subtitle {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    margin-top: -15px;
+    color: var(--text-muted);
+  }
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  padding: clamp(20px, 5vw, 40px);
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 15px 40px var(--glass-shadow),
+    inset 0 1px 0 var(--glass-highlight);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  min-height: auto;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-radius: 16px;
+  }
+}
+
+.tab-content {
+  padding: 15px 0;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.role {
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-color);
+
+  .company-name {
+    color: var(--primary-color);
+    white-space: normal;
+
+    &::before {
+      content: '@';
+      margin-right: 4px;
+      opacity: 0.5;
+    }
+  }
+}
+
+.period {
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  background: rgba(var(--primary-rgb), 0.1);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.points-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+    color: var(--text-muted);
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    strong {
+      color: var(--text-color);
+      font-weight: 600;
+    }
+  }
+}
+
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}

@@ -1,0 +1,77 @@
+<section id="contact">
+  <div class="contact-header" data-aos="fade-up">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Have a question or want to work together? My inbox is always open!</p>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-info" data-aos="fade-right">
+      <div class="info-card">
+        <div class="info-item">
+          <div class="icon-box">
+            <mat-icon>mail</mat-icon>
+          </div>
+          <div class="info-text">
+            <h4>Email</h4>
+            <a href="mailto:khan.arshad3008@gmail.com">khan.arshad3008@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-box">
+            <mat-icon>location_on</mat-icon>
+          </div>
+          <div class="info-text">
+            <h4>Location</h4>
+            <span>Mumbai, Maharashtra, India</span>
+          </div>
+        </div>
+
+        <div class="social-wrapper">
+          <h4>Social Media</h4>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/arshad-khan-0282b2215" target="_blank" class="social-btn linkedin"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Arsh75" target="_blank" class="social-btn github" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-container" data-aos="fade-left">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="modern-form">
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Your Name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Email Address" required>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Subject</mat-label>
+          <input matInput formControlName="subject" placeholder="What is this about?" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Message</mat-label>
+          <textarea matInput formControlName="message" rows="5" placeholder="Your message here..." required></textarea>
+        </mat-form-field>
+
+        <button mat-flat-button class="submit-btn" type="submit" [disabled]="!contactForm.valid || isSending"
+          appMagneticButton [strength]="0.4">
+          {{ isSending ? 'Sending...' : 'Send Message' }}
+          <mat-icon>{{ isSending ? 'hourglass_empty' : 'send' }}</mat-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

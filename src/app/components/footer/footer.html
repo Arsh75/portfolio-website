@@ -1,0 +1,27 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo">Arshad Khan</span>
+        <p>Software Engineer Analyst</p>
+      </div>
+
+      <div class="footer-links">
+        <button appMagneticButton [strength]="0.15" (click)="scrollTo('home')">Home</button>
+        <button appMagneticButton [strength]="0.15" (click)="scrollTo('about')">About</button>
+        <button appMagneticButton [strength]="0.15" (click)="scrollTo('projects')">Work</button>
+        <button appMagneticButton [strength]="0.15" (click)="scrollTo('contact')">Contact</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">&copy; {{ currentYear }} Arshad Khan. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/Arsh75" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/arshad-khan-0282b2215" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

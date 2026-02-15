@@ -1,0 +1,56 @@
+<section id="about" style="position: relative;" (mousemove)="onMouseMove($event)">
+  <canvas #particleCanvas class="particle-canvas"></canvas>
+  <div class="mesh-gradient" style="opacity: 0.3;"></div>
+  <div class="about-content" style="position: relative; z-index: 1;">
+    <div class="about-header" data-aos="fade-up">
+      <h2 class="section-title">About Me</h2>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-image-container" data-aos="fade-right">
+        <div class="image-box">
+          <img src="images/profile.jpg" alt="Arshad Khan" class="about-photo">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <div class="about-text-container" data-aos="fade-left">
+        <div class="text-block">
+          <p>
+            Hello! I'm <strong>Arshad Khan</strong>, a software engineer with a passion for building 
+            elegant solutions to complex problems. My journey into tech began with curiosity about 
+            how hardware and software interact, leading to my first project—an Arduino-based smart lock.
+          </p>
+          
+          <p>
+            Today, I focus on building high-performance analytics platforms at 
+            <strong>Sogolytics</strong>. I thrive at the intersection of backend stability and 
+            frontend excellence, ensuring that large-scale data is not just processed efficiently, 
+            but also visualized beautifully.
+          </p>
+          
+          <p>
+            I'm currently pushing the boundaries of traditional dashboards by integrating 
+            <strong>AI-powered intelligent agents</strong> that allow users to interact with 
+            their data using natural language.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-value">2.5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">3x</span>
+            <span class="stat-label">Performance Gains</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">SaaS</span>
+            <span class="stat-label">Expertise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

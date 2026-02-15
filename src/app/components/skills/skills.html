@@ -1,0 +1,25 @@
+<section id="skills">
+  <div class="skills-header" data-aos="fade-up">
+    <h2 class="section-title">Technical Expertise</h2>
+    <p class="section-subtitle">A deep dive into my core competencies and the tools I use daily.</p>
+  </div>
+  
+  <div class="skills-container">
+    @for (cat of skillCategories; track cat.name) {
+      <div class="skill-category" data-aos="fade-up">
+        <div class="category-header">
+          <div class="icon-wrap">
+            <i class="fas" [class]="cat.icon"></i>
+          </div>
+          <h3>{{ cat.name }}</h3>
+        </div>
+        
+        <div class="skills-list">
+          @for (skill of cat.skills; track skill) {
+            <span class="skill-item">{{ skill }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

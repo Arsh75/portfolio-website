@@ -1,0 +1,45 @@
+<section class="hero-container" id="home" (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()">
+  <!-- Antigravity confetti canvas -->
+  <canvas #confettiCanvas class="confetti-canvas"></canvas>
+
+  <!-- Subtle grid overlay -->
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="hero-content" data-aos="fade-up">
+    <p class="greeting">Software Engineer Analyst</p>
+    <h1 class="name">Arshad <span class="text-gradient">Khan</span></h1>
+    <h2 class="tagline">I build <span class="text-gradient-hero">scalable enterprise</span> applications.</h2>
+    <p class="description">
+      Specializing in high-performance analytics dashboards and intelligent data-driven solutions at
+      <strong>Sogolytics</strong>.
+    </p>
+    <div class="hero-actions">
+      <button mat-flat-button class="primary-btn" appMagneticButton [strength]="0.35" (click)="scrollTo('projects')">
+        <i class="fas fa-rocket"></i>
+        View My Work
+      </button>
+      <button mat-stroked-button class="secondary-btn" appMagneticButton [strength]="0.35"
+        (click)="scrollTo('contact')">
+        Get in touch
+      </button>
+      <a mat-stroked-button class="resume-btn" appMagneticButton [strength]="0.35" href="Arshad_Khan_Resume.pdf"
+        download="Arshad_Khan_Resume.pdf">
+        <i class="fas fa-download"></i>
+        Resume
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="200">
+    <div class="image-frame" appCardTilt [maxTilt]="12" [perspective]="1200" [speed]="0.25" [enableGlow]="true">
+      <div class="tilt-glow"></div>
+      <div class="image-inner">
+        <img src="images/profile.jpg" alt="Arshad Khan — Software Engineer" class="profile-photo">
+      </div>
+      <div class="frame-decoration decoration-1"></div>
+      <div class="frame-decoration decoration-2"></div>
+    </div>
+  </div>
+</section>

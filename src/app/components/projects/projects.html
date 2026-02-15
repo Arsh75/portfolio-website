@@ -1,0 +1,35 @@
+<section id="projects">
+  <div class="projects-header" data-aos="fade-up">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">A collection of technical projects I've worked on recently.</p>
+  </div>
+  
+  <div class="projects-grid">
+    @for (project of projects; track project.title) {
+      <mat-card class="project-card" data-aos="fade-up" [appCursorText]="'View Project'">
+        <div class="project-icon">
+          <i class="fas" [class]="project.icon"></i>
+        </div>
+        
+        <mat-card-title>{{ project.title }}</mat-card-title>
+        
+        <mat-card-content>
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="tech-stack">
+            @for (t of project.tech; track t) {
+              <span class="tech-pill">{{ t }}</span>
+            }
+          </div>
+        </mat-card-content>
+        
+        <mat-card-actions align="start">
+          <a class="view-link" [href]="project.link" target="_blank">
+            <span>Explore Details</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</section>
