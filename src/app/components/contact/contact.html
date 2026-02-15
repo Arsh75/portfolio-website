@@ -44,6 +44,9 @@
 
     <div class="contact-form-container" data-aos="fade-left">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="modern-form">
+        <!-- Honeypot Field (Security) -->
+        <input type="text" formControlName="honeypot" style="display:none !important" tabindex="-1" autocomplete="off">
+
         <div class="form-row">
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>

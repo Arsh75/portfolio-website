@@ -45,10 +45,12 @@ export class EmailService {
 
             return response.status === 200;
         } catch (error: unknown) {
-            const err = error as { status?: number; text?: string };
-            console.error('EmailJS Error Status:', err.status);
-            console.error('EmailJS Error Text:', err.text);
-            console.error('EmailJS Full Error:', JSON.stringify(error));
+            if (!environment.production) {
+                const err = error as { status?: number; text?: string };
+                console.error('EmailJS Error Status:', err.status);
+                console.error('EmailJS Error Text:', err.text);
+                console.error('EmailJS Full Error:', JSON.stringify(error));
+            }
             return false;
         }
     }

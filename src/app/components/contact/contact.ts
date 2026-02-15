@@ -38,11 +38,19 @@ export class ContactComponent {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', Validators.required],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
+      honeypot: [''] // Hidden security field
     });
   }
 
   async onSubmit() {
+    // Security check: If honeypot is filled, it's a bot
+    if (this.contactForm.get('honeypot')?.value) {
+      console.warn('Bot detected via honeypot field.');
+      this.contactForm.reset();
+      return;
+    }
+
     if (this.contactForm.valid && !this.isSending) {
       this.isSending = true;
 
